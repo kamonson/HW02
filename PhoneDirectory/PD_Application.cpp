@@ -1,4 +1,7 @@
 /** Phone directory application that uses console I/O. */
+//Graham Groe
+//Zeus 
+//kamonson  123abc!@#ABC
 
 #include "Array_Based_PD.h"
 #include <iostream>
@@ -90,12 +93,20 @@ void do_remove_entry(Phone_Directory& the_directory) // Exercise 1.8: please com
 	string name;
 	cout << "Enter name: ";
 	getline(cin, name);
+	//Graham Groe
+
+	the_directory.remove_entry(name);
+	if (the_directory.remove_entry(name) == ""){
+		cout << name << "could not be found in directory and therefore was not removed";
+	}
+	else {
+		cout << name << "has been removed from the phone directory";
+	}
+
 	// Complete the rest of this function 
-	
 }
 
 void do_save(Phone_Directory& the_directory)
 {
 	the_directory.save();
 }
-
