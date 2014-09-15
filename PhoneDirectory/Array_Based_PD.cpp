@@ -14,8 +14,7 @@ using namespace std;
 /** Construct an empty Phone_Directory
  */
 Phone_Directory::Phone_Directory() :
-size(0), capacity(100), the_directory(new Directory_Entry[100]),
-source_name("") {}
+size(0), capacity(100), the_directory(new Directory_Entry[100]), source_name("") {}
 
 /** Destroy the Phone_Directory
  */
@@ -115,7 +114,17 @@ void Phone_Directory::save()
 	*/
 string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please complete the remove_entry() method - Ed/Kent
 {
-
+	int index = Phone_Directory::find(name); // Call function find to determine if name is already in the directory
+	if (index != -1) { //If name is already in directory
+		the_directory[index].set_number(" "); // Remove(overwrite) entry from the array and modify the size
+		for (int i = index; i < size - 1; i++)
+			the_directory[i] = the_directory[i + 1];
+		size--; // reduce array size by 1
+		return the_directory[index].get_number(); //Return number
+	}
+	else
+		return ""; //Return empty string
+	
 	// Hint: you can use the code below to shift names down in the directory to remove the selected entry specified by "index"
 	// for (int i = index; i < size - 1; i++)
 		// the_directory[i] = the_directory[i + 1];

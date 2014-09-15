@@ -56,13 +56,27 @@ private:
 	class Directory_Entry /* Exercise 1.6: Please complete the definition of the Directory_Entry class here. - Ed/Kent */
 	{
 	public:
-		Directory_Entry(string name, string number); //constructor accepting arguments containing string type variable for name and number
-		const string get_name(); //set const string function for obtaining the name stored in private
-		const string get_number(); //set const string function for obtaining the number stored in private
-		void set_number(const string& new_number); //set function to modify the number stored in private
+		Directory_Entry(){} //default constructor
+		Directory_Entry (std::string name, std::string number) //constructor accepting arguments containing string type variable for name and number
+		{
+			this->name = name; // set argument name to private name
+			this->number = number; // set argument number to number
+		};
+		const std::string get_name() // set const string function for obtaining the name stored in private
+		{
+			return name; //return name
+		};
+		const std::string get_number() //set const string function for obtaining the number stored in private
+		{
+			return number; //return number
+		};
+		void set_number(const std::string& new_number) //set function to modify the number stored in private
+		{
+			number = new_number; //asign new_number to number
+		};
 	private:
-		string name; //name of person in directory
-		string number; //number of person in directory
+		std::string name; //name of person in directory
+		std::string number; //number of person in directory
 	};
 
 	// Private Functions
