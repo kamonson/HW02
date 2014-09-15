@@ -115,12 +115,14 @@ void Phone_Directory::save()
 string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please complete the remove_entry() method - Ed/Kent
 {
 	int index = Phone_Directory::find(name); // Call function find to determine if name is already in the directory
+	string p_num = the_directory[index].get_number(); // set p_num = to the number of person being removed
 	if (index != -1) { //If name is already in directory
 		the_directory[index].set_number(" "); // Remove(overwrite) entry from the array and modify the size
-		for (int i = index; i < size - 1; i++)
-			the_directory[i] = the_directory[i + 1];
-		size--; // reduce array size by 1
-		return the_directory[index].get_number(); //Return number
+		for (int i = index; i < size - 1; i++) //search array from index (location in array being removed) to the end
+			the_directory[i] = the_directory[i + 1]; //shift everything from location being removed down up by 1 leaving the last position blank
+		size--; // reduce array size by 1 removing the blank space
+		return p_num;
+		//return the_directory[index].get_number(); //Return number
 	}
 	else
 		return ""; //Return empty string
