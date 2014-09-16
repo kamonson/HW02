@@ -53,6 +53,7 @@ public:
 	void save();
 
 private:
+	//Zeus
 	class Directory_Entry /* Exercise 1.6: Please complete the definition of the Directory_Entry class here. - Ed/Kent */
 	{
 	public:
