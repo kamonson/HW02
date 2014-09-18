@@ -63,11 +63,11 @@ private:
 			this->name = name; // set argument name to private name
 			this->number = number; // set argument number to number
 		};
-		const std::string get_name() // set const string function for obtaining the name stored in private
+		std::string get_name() const // set const string function for obtaining the name stored in private
 		{
 			return name; //return name
 		};
-		const std::string get_number() //set const string function for obtaining the number stored in private
+		std::string get_number() const //set const string function for obtaining the number stored in private
 		{
 			return number; //return number
 		};

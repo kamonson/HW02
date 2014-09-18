@@ -95,12 +95,12 @@ void do_remove_entry(Phone_Directory& the_directory) // Exercise 1.8: please com
 	getline(cin, name);
 	//Graham Groe
 
-	//the_directory.remove_entry(name); don't need to call twice
+	//the_directory.remove_entry(name); don't need to call twice Zeus
 	if (the_directory.remove_entry(name) == ""){
-		cout << name << "could not be found in directory and therefore was not removed" << endl;
+		cout << name << " could not be found in directory and therefore was not removed" << endl;
 	}
 	else {
-		cout << name << "has been removed from the phone directory" <<endl;
+		cout << name << " has been removed from the phone directory" <<endl;
 	}
 
 	// Complete the rest of this function 
